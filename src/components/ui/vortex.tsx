@@ -20,7 +20,7 @@ interface VortexProps {
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
-  const animationFrameId = useRef<number>();
+const animationFrameId = useRef<number | null>(null);
   const particleCount = props.particleCount || 700;
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
@@ -53,6 +53,16 @@ export const Vortex = (props: VortexProps) => {
   const lerp = (n1: number, n2: number, speed: number): number =>
     (1 - speed) * n1 + speed * n2;
 
+  const resize = (canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
+    const { innerWidth, innerHeight } = window;
+
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    center[0] = 0.5 * canvas.width;
+    center[1] = 0.5 * canvas.height;
+  };
+
   const setup = () => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
@@ -60,7 +70,7 @@ export const Vortex = (props: VortexProps) => {
       const ctx = canvas.getContext("2d");
 
       if (ctx) {
-        resize(canvas, ctx);
+        resize(canvas, ctx);  // This is fine - 2 arguments
         initParticles();
         draw(canvas, ctx);
       }
@@ -140,7 +150,6 @@ export const Vortex = (props: VortexProps) => {
     const vy = lerp(particleProps[i4], Math.sin(n), 0.5);
     
     life = particleProps[i5];
-    // Fixed: Changed from 'let' to 'const' since they're never reassigned
     const x2 = x + vx * speed;
     const y2 = y + vy * speed;
 
@@ -186,16 +195,6 @@ export const Vortex = (props: VortexProps) => {
     return x > canvas.width || x < 0 || y > canvas.height || y < 0;
   };
 
-  const resize = (canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
-    const { innerWidth, innerHeight } = window;
-
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-
-    center[0] = 0.5 * canvas.width;
-    center[1] = 0.5 * canvas.height;
-  };
-
   const renderGlow = (
     canvas: HTMLCanvasElement,
     ctx: CanvasRenderingContext2D,
@@ -228,9 +227,8 @@ export const Vortex = (props: VortexProps) => {
     
     const handleResize = () => {
       const canvas = canvasRef.current;
-      const ctx = canvas?.getContext("2d");
-      if (canvas && ctx) {
-        resize(canvas, ctx);
+      if (canvas) {  // Fixed: Only pass canvas, since ctx is optional
+        resize(canvas);
       }
     };
 
@@ -259,5 +257,5 @@ export const Vortex = (props: VortexProps) => {
         {props.children}
       </div>
     </div>
-  );
-};
+);
+}

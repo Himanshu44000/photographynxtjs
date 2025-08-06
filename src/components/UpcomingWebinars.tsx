@@ -1,5 +1,4 @@
 "use client";
-
 import { HoverEffect } from "./ui/card-hover-effect";
 
 const featuredWebinars = [
@@ -61,10 +60,13 @@ function UpcomingWebinars() {
                         {
                             title: webinars.title,
                             description: webinars.description,
-                            link: '/',  // Fixed: Changed 'Link' to 'link' (lowercase)
+                            link: '/',
+                            isFeatured: webinars.isFeatured,
+                            className: 'bg-white dark:bg-neutral-800 text-black dark:text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300',
                         }
                     ))} />
                 </div>
+                
             </div>
         </div>
     )
