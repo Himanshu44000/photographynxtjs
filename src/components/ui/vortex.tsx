@@ -47,7 +47,7 @@ export const Vortex = (props: VortexProps) => {
   const rand = (n: number): number => n * Math.random();
   const randRange = (n: number): number => n - rand(2 * n);
   const fadeInOut = (t: number, m: number): number => {
-    const hm = 0.5 * m;  // Fixed: changed 'let' to 'const'
+    const hm = 0.5 * m;
     return Math.abs(((t + hm) % m) - hm) / hm;
   };
   const lerp = (n1: number, n2: number, speed: number): number =>
@@ -80,7 +80,6 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Fixed: changed all 'let' to 'const' for variables that aren't reassigned
     const x = rand(canvas.width);
     const y = center[1] + randRange(rangeY);
     const vx = 0;
@@ -121,13 +120,12 @@ export const Vortex = (props: VortexProps) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Fixed: changed all 'let' to 'const' for variables that aren't reassigned
     const i2 = 1 + i;
     const i3 = 2 + i;
     const i4 = 3 + i;
     const i5 = 4 + i;
 
-    let life, x2, y2;
+    let life;
 
     // Read values from particleProps
     const x = particleProps[i];
@@ -142,8 +140,9 @@ export const Vortex = (props: VortexProps) => {
     const vy = lerp(particleProps[i4], Math.sin(n), 0.5);
     
     life = particleProps[i5];
-    x2 = x + vx * speed;
-    y2 = y + vy * speed;
+    // Fixed: Changed from 'let' to 'const' since they're never reassigned
+    const x2 = x + vx * speed;
+    const y2 = y + vy * speed;
 
     drawParticle(x, y, x2, y2, life, ttl, radius, hue, ctx);
 
@@ -155,7 +154,6 @@ export const Vortex = (props: VortexProps) => {
     particleProps[i4] = vy;
     particleProps[i5] = life;
 
-    // Fixed: use proper conditional check
     if (checkBounds(x, y, canvas) || life > ttl) {
       initParticle(i);
     }
@@ -188,7 +186,7 @@ export const Vortex = (props: VortexProps) => {
     return x > canvas.width || x < 0 || y > canvas.height || y < 0;
   };
 
-  const resize = (canvas: HTMLCanvasElement) => {  // Removed unused 'ctx' parameter
+  const resize = (canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
     const { innerWidth, innerHeight } = window;
 
     canvas.width = innerWidth;
@@ -232,7 +230,7 @@ export const Vortex = (props: VortexProps) => {
       const canvas = canvasRef.current;
       const ctx = canvas?.getContext("2d");
       if (canvas && ctx) {
-        resize(canvas);
+        resize(canvas, ctx);
       }
     };
 
@@ -244,7 +242,7 @@ export const Vortex = (props: VortexProps) => {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, []); // Dependencies are handled correctly now
+  }, []);
 
   return (
     <div className={cn("relative h-full w-full", props.containerClassName)}>
