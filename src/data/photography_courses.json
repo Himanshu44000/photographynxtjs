@@ -1,0 +1,104 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Portrait Photography Fundamentals",
+      "slug": "portrait-photography-fundamentals",
+      "description": "Master the art of portrait photography with professional lighting techniques, composition rules, and posing guidance for stunning people photography.",
+      "price": 99.99,
+      "instructor": "Sarah Mitchell",
+      "isFeatured": true,
+      "image": "https://images.pexels.com/photos/33247092/pexels-photo-33247092.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Landscape Photography for Beginners",
+      "slug": "landscape-photography-for-beginners",
+      "description": "Capture breathtaking landscapes and natural beauty with essential techniques for outdoor photography, golden hour shooting, and composition mastery.",
+      "price": 109.99,
+      "instructor": "David Chen",
+      "isFeatured": false,
+      "image": "https://images.pexels.com/photos/10614502/pexels-photo-10614502.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Advanced Street Photography",
+      "slug": "advanced-street-photography",
+      "description": "Develop your eye for candid moments and urban storytelling with advanced street photography techniques and ethical shooting practices.",
+      "price": 119.99,
+      "instructor": "Maria Rodriguez",
+      "isFeatured": true,
+      "image": "https://images.pexels.com/photos/9703626/pexels-photo-9703626.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Wildlife Photography Mastery",
+      "slug": "wildlife-photography-mastery",
+      "description": "Learn to capture stunning wildlife images with telephoto techniques, animal behavior understanding, and field photography skills.",
+      "price": 129.99,
+      "instructor": "James Thompson",
+      "isFeatured": false,
+      "image": "https://images.pexels.com/photos/1119258/pexels-photo-1119258.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Macro Photography Techniques",
+      "slug": "macro-photography-techniques",
+      "description": "Explore the miniature world through macro photography, mastering close-up techniques, focus stacking, and specialized equipment usage.",
+      "price": 139.99,
+      "instructor": "Lisa Park",
+      "isFeatured": false,
+      "image": "https://images.pexels.com/photos/7193298/pexels-photo-7193298.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Photography Post-Processing Mastery",
+      "slug": "photography-post-processing-mastery",
+      "description": "Transform your raw images into stunning works of art using Adobe Lightroom and Photoshop with professional editing workflows.",
+      "price": 149.99,
+      "instructor": "Alex Turner",
+      "isFeatured": true,
+      "image": "https://images.pexels.com/photos/7014266/pexels-photo-7014266.jpeg"
+    },
+    {
+      "id": 7,
+      "title": "Commercial Photography Essentials",
+      "slug": "commercial-photography-essentials",
+      "description": "Master product photography, fashion shoots, and commercial assignments with studio lighting, client management, and business skills.",
+      "price": 159.99,
+      "instructor": "Rachel Green",
+      "isFeatured": false,
+      "image": "https://images.pexels.com/photos/6833469/pexels-photo-6833469.jpeg"
+    },
+    {
+      "id": 8,
+      "title": "Night and Astrophotography",
+      "slug": "night-and-astrophotography",
+      "description": "Capture the beauty of the night sky and low-light environments with long exposure techniques, star trails, and Milky Way photography.",
+      "price": 169.99,
+      "instructor": "Michael Torres",
+      "isFeatured": true,
+      "image": "https://images.pexels.com/photos/2670898/pexels-photo-2670898.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "Photography History and Theory",
+      "slug": "photography-history-and-theory",
+      "description": "Explore the evolution of photography from its inception to digital age, studying influential photographers and iconic movements.",
+      "price": 179.99,
+      "instructor": "Dr. Elena Volkov",
+      "isFeatured": false,
+      "image": "https://images.pexels.com/photos/603580/pexels-photo-603580.jpeg"
+    },
+    {
+      "id": 10,
+      "title": "Wedding Photography Complete Guide",
+      "slug": "wedding-photography-complete-guide",
+      "description": "Master the art of wedding photography with emotion-capturing techniques, timeline management, and client relationship skills.",
+      "price": 189.99,
+      "instructor": "Benjamin Clark",
+      "isFeatured": true,
+      "image": "https://images.pexels.com/photos/3650423/pexels-photo-3650423.jpeg"
+    }
+  ]
+}
