@@ -8,13 +8,13 @@ function FeaturedCourses() {
 
     interface Course {
 
-        id: Number,
-        title: String,
-        slug: String,
-        description: String,
-        price: Number,
-        instructor: String,
-        isFeatured: Boolean,
+        id: number,
+        title: string,
+        slug: string,
+        description: string,
+        price: number,
+        instructor: string,
+        isFeatured: boolean,
     }
 
 

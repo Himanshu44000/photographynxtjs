@@ -47,7 +47,7 @@ function Instructors() {
 
       {/* Short About Paragraph */}
       <p className='mt-4 font-medium text-base md:text-lg text-neutral-300 max-w-2xl mx-auto text-center'>
-        Our instructors are more than just photographers — they are mentors, artists, and industry professionals with years of experience behind the lens. Whether you're learning the basics or mastering advanced techniques, our team is here to guide you every step of the way.
+        Our instructors are more than just photographers — they are mentors, artists, and industry professionals with years of experience behind the lens. Whether you are learning the basics or mastering advanced techniques, our team is here to guide you every step of the way.
       </p>
 
       {/* Tooltip Section (Instructor Cards/Avatars) */}

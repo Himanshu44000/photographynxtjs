@@ -18,7 +18,7 @@ function page() {
       <h1 className="text-md md:text-5xl text-center font-sans font-bold text-neutral-300 hover:text-neutral-500 transition duration-300 mb-8">All Courses ({courseData.courses.length})</h1>
       <div className="flex flex-wrap justify-center gap-8 ">
         {courseData.courses.map((course: Course) => (
-            <CardContainer  className="inter-var m-4 border-amber-400">
+            <CardContainer key={course.id} className="inter-var m-4 border-amber-400">
       <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
         <CardItem
           translateZ="50"
